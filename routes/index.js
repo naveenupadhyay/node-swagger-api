@@ -6,127 +6,125 @@ var db = require('../queries');
 /**
  * @swagger
  * definition:
- *   Puppy:
+ *   Wallet:
  *     properties:
  *       name:
  *         type: string
- *       breed:
+ *       description:
  *         type: string
- *       age:
+ *       amount:
  *         type: integer
- *       sex:
- *         type: string
  */
 
 /**
  * @swagger
- * /api/puppies:
+ * /api/wallets:
  *   get:
  *     tags:
- *       - Puppies
- *     description: Returns all puppies
+ *       - Wallets
+ *     descriptionription: Returns all wallets
  *     produces:
  *       - application/json
  *     responses:
  *       200:
- *         description: An array of puppies
+ *         descriptionription: An array of wallets
  *         schema:
- *           $ref: '#/definitions/Puppy'
+ *           $ref: '#/definitions/Wallet'
  */
-router.get('/api/puppies', db.getAllPuppies);
+router.get('/api/wallets', db.getAllWallets);
 
 /**
  * @swagger
- * /api/puppies/{id}:
+ * /api/wallets/{id}:
  *   get:
  *     tags:
- *       - Puppies
- *     description: Returns a single puppy
+ *       - Wallets
+ *     descriptionription: Returns a single wallet
  *     produces:
  *       - application/json
  *     parameters:
  *       - name: id
- *         description: Puppy's id
+ *         descriptionription: Wallet's id
  *         in: path
  *         required: true
  *         type: integer
  *     responses:
  *       200:
- *         description: A single puppy
+ *         descriptionription: A single wallet
  *         schema:
- *           $ref: '#/definitions/Puppy'
+ *           $ref: '#/definitions/Wallet'
  */
-router.get('/api/puppies/:id', db.getSinglePuppy);
+router.get('/api/wallets/:id', db.getSingleWallet);
 
 /**
  * @swagger
- * /api/puppies:
+ * /api/wallets:
  *   post:
  *     tags:
- *       - Puppies
- *     description: Creates a new puppy
+ *       - Wallets
+ *     descriptionription: Creates a new wallet
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: puppy
- *         description: Puppy object
+ *       - name: wallet
+ *         descriptionription: Wallet object
  *         in: body
  *         required: true
  *         schema:
- *           $ref: '#/definitions/Puppy'
+ *           $ref: '#/definitions/Wallet'
  *     responses:
  *       200:
- *         description: Successfully created
+ *         descriptionription: Successfully created
  */
-router.post('/api/puppies', db.createPuppy);
+router.post('/api/wallets', db.createWallet);
 
 /**
  * @swagger
- * /api/puppies/{id}:
+ * /api/wallets/{id}:
  *   put:
  *     tags:
- *       - Puppies
- *     description: Updates a single puppy
+ *       - Wallets
+ *     descriptionription: Updates a single wallet
  *     produces:
  *       - application/json
  *     parameters:
  *       - name: id
- *         description: Puppy's id
+ *         descriptionription: Wallet's id
  *         in: path
  *         required: true
  *         type: integer
- *       - name: puppy
- *         description: Puppy object
+ *       - name: wallet
+ *         descriptionription: Wallet object
  *         in: body
  *         required: true
  *         schema:
- *           $ref: '#/definitions/Puppy'
+ *           $ref: '#/definitions/Wallet'
  *     responses:
  *       200:
- *         description: Successfully updated
+ *         descriptionription: Successfully updated
  */
-router.put('/api/puppies/:id', db.updatePuppy);
+router.put('/api/wallets/:id', db.updateWallet);
 
 /**
  * @swagger
- * /api/puppies/{id}:
+ * /api/wallets/{id}:
  *   delete:
  *     tags:
- *       - Puppies
- *     description: Deletes a single puppy
+ *       - Wallets
+ *     descriptionription: Deletes a single wallet
  *     produces:
  *       - application/json
  *     parameters:
  *       - name: id
- *         description: Puppy's id
+ *         descriptionription: Wallet's id
  *         in: path
  *         required: true
  *         type: integer
  *     responses:
  *       200:
- *         description: Successfully deleted
+ *         descriptionription: Successfully deleted
  */
-router.delete('/api/puppies/:id', db.removePuppy);
+router.delete('/api/wallets/:id', db.removeWallet);
 
 
 module.exports = router;
